@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  hahn-web-frontend:
+    image: aces32/hahnform:v2
+    environment:
+      PORT: 8080
+      PROXY_API: http://hahn-web-backend:9080/
+    ports:
+      - 8080:8080
+  hahn-web-backend:
+    image: aces32/hahn:v1
+    ports:
+      - 9080:9080
+
